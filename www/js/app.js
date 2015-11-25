@@ -43,6 +43,11 @@ angular.module('starter', [
     templateUrl: 'templates/about.html'
   })
 
+  .state('form', {
+    url: '/form',
+    templateUrl: 'templates/form.html'
+  })
+
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -91,6 +96,6 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/form');
 
 });
