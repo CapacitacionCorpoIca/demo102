@@ -36,13 +36,19 @@
 						</div>
 					</label>
 				</div>
+				<ion-toggle ng-model="airplaneMode">Airplane Mode</ion-toggle>
 				<div class="item item-checkbox">
 					<label class="checkbox">
 						<input type="checkbox">
 					</label>
 					Si
 				</div>
-			</div>
+				<ion-checkbox ng-model="isChecked">Checkbox Label</ion-checkbox>
+
+				<ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+				<ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
+				<ion-radio ng-model="choice" ng-value="'C'">Choose C</ion-radio>
+							</div>
 			<div class="padding">
 				<button class="button button-block">Enviar</button>
 			</div>

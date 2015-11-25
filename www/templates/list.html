@@ -1,0 +1,19 @@
+<ion-view view-title="List">
+	<div class="bar bar-header bar-assertive">
+		<h1 class="title">List</h1>
+	</div>
+	<ion-content class="has-header">
+		<div class="button-bar">
+			<button class="button" ng-click="showAlert()">Alert</button>
+			<button class="button button-calm" ng-click="showConfirmed()">Calm</button>
+			<button class="button button-calm" ng-click="showInput()">Input</button>
+		</div>
+		
+		<ion-list>
+			<ion-item class=" item-thumbnail-left" ng-repeat="chat in chats">
+				<img ng-src="{{ chat.face }}">
+				{{ chat.name }}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

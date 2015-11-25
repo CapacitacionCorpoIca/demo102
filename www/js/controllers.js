@@ -25,4 +25,64 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+
+.controller('ListController', 
+  [
+    '$scope', 'Chats', '$timeout', '$ionicLoading', '$ionicPopup',
+    function($scope, Chats, $timeout, $ionicLoading, $ionicPopup) {
+      $ionicLoading.show({
+        template: '<ion-spinner icon="lines"></ion-spinner></br> Espere'
+      });
+      $timeout(function(){
+        $ionicLoading.hide();
+      },1000);
+      $scope.chats = Chats.all();
+
+      $scope.data = {};
+      $scope.showAlert = showAlert;
+      $scope.showConfirmed = showConfirmed;
+      $scope.showInput = showInput;
+
+      function showAlert(){
+        $ionicPopup.alert({
+          title: 'Cuidado',
+          template: 'A occurrido un error'
+        })
+      }
+
+
+      function showConfirmed(){
+        var myPopup = $ionicPopup.confirm({
+          title: 'Cuidado',
+          template: '¿Esta seguro?'
+        });
+
+        myPopup.then(function(rta){
+          console.log(rta);
+        });
+      }
+
+      function showInput(){
+        $ionicPopup.show({
+          title: 'Cuidado',
+          subTitle: '¿Esta seguro?',
+          template: '<input type="password" ng-model="data.wifi">',
+          scope: $scope,
+          buttons:[
+            {text: 'Cancelar', type: 'button-calm'},
+            {
+              text: 'Confirmar',
+              onTap: function(){
+                console.log($scope.data.wifi);
+              }
+            },
+          ],
+          
+        });
+      }
+
+    }
+  ]
+);
