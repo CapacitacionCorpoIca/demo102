@@ -7,6 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic',
+  'ngCordova',
   'starter.controllers',
   'starter.services'
 ])
@@ -36,6 +37,12 @@ angular.module('starter', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
+
+  .state('about', {
+    url: '/about',
+    templateUrl: 'templates/about.html'
+  })
+
     .state('tab', {
     url: '/tab',
     abstract: true,
