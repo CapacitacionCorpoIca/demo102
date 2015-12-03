@@ -7,7 +7,6 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic',
-  'ngCordova',
   'starter.controllers',
   'starter.services'
 ])
@@ -37,6 +36,11 @@ angular.module('starter', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
+
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html'
+  })
 
   .state('about', {
     url: '/about',
@@ -102,6 +106,6 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/list');
+  $urlRouterProvider.otherwise('/home');
 
 });
