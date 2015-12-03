@@ -11,7 +11,7 @@ Introduccion a ionic
 - Que es Ionic
 - Ionic y Angular
 - Workflow de Ionic
-- 
+
 ## Day 3 (Components)
 - Content
 - Forms
